@@ -3,7 +3,8 @@ import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { NewTransactionalModal } from "./components/NewTransactionalModal";
-import { GlobalStyle } from "./styles/Global"
+import { GlobalStyle } from "./styles/Global";
+import { TransactionsProvider } from "./TransactionsContext";
 
 Modal.setAppElement('#root');
 
@@ -19,11 +20,11 @@ export const App = () => {
   }
 
   return (
-    <>
+    <TransactionsProvider>
       <GlobalStyle />
       <Header onOpenNewTransactionalModal={handleOpenNewTransactionalModal} />
       <Dashboard />
       <NewTransactionalModal isOpen={isNewTransactionalModalOpen} onRequestClose={handleCloseNewTransactionalModal} />
-    </>
+    </TransactionsProvider>
   );
 }
