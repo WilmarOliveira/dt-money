@@ -3,8 +3,8 @@ import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { NewTransactionalModal } from "./components/NewTransactionalModal";
+import { TransactionsProvider } from "./hooks/useTransactions";
 import { GlobalStyle } from "./styles/Global";
-import { TransactionsProvider } from "./TransactionsContext";
 
 Modal.setAppElement('#root');
 
